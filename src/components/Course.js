@@ -7,10 +7,15 @@ const Course = ({course}) =>{
    
     return(
         <div>
-          <Header title= {course.name}/>
-          <Content contents={course.parts} />
-          <Total addition={course.parts}/>
+            {course.map(node =>
+            <div key={node.id}>
+            <Header title= {node.name}/>
+          <Content contents={node.parts} />
+          <Total addition={node.parts}/>
       
+           </div>
+            )}       
+   
       </div>
     )
 }
